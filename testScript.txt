@@ -1,0 +1,6 @@
+help
+info
+show
+execute_script
+testScript.txt
+show
