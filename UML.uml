@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Commands.ShowCommand</OriginalElement>
+  <nodes>
+    <node x="600.25" y="79.0">java.lang.Throwable</node>
+    <node x="2038.0" y="539.0">Commands.RemoveLowerCommand</node>
+    <node x="466.0" y="247.0">Exceptions.NotUniqueIdException</node>
+    <node x="1056.0" y="247.0">Exceptions.MovieGenreException</node>
+    <node x="539.9999999999999" y="539.0">Commands.FilterContainsNameCommand</node>
+    <node x="1454.0" y="539.0">Commands.HistoryCommand</node>
+    <node x="1891.0" y="539.0">Commands.ExitCommand</node>
+    <node x="786.9999999999999" y="539.0">Commands.RemoveByIdCommand</node>
+    <node x="976.9999999999999" y="539.0">Commands.UpdateByIdCommand</node>
+    <node x="329.0" y="613.0">Stored.Location</node>
+    <node x="1314.0" y="539.0">Commands.AddCommand</node>
+    <node x="854.0833333333333" y="79.0">java.lang.Enum</node>
+    <node x="1167.0" y="539.0">Commands.HelpCommand</node>
+    <node x="893.0833333333333" y="158.0">Enums.MovieGenre</node>
+    <node x="479.0" y="613.0">Monitoring.Control</node>
+    <node x="0.0" y="613.0">Stored.Coordinates</node>
+    <node x="622.0" y="613.0">IO.Reader</node>
+    <node x="677.0" y="247.0">Exceptions.ColorException</node>
+    <node x="894.0" y="613.0">Stored.Movie</node>
+    <node x="1369.5" y="321.0">Commands.CommandInterface</node>
+    <node x="172.0" y="613.0">Monitoring.Assistant</node>
+    <node x="845.0" y="247.0">Exceptions.CoordinateXException</node>
+    <node x="2529.0" y="539.0">Commands.MaxByTotalBoxOfficeCommand</node>
+    <node x="219.0" y="247.0">Exceptions.ReadReservedCharException</node>
+    <node x="0.0" y="247.0">Exceptions.LessThanZeroException</node>
+    <node x="365.0" y="539.0">Commands.AddIfMinCommand</node>
+    <node x="211.0" y="539.0">Commands.ClearCommand</node>
+    <node x="600.25" y="158.0">java.lang.Exception</node>
+    <node x="789.0833333333333" y="158.0">Enums.Color</node>
+    <node x="622.75" y="0.0">java.io.Serializable</node>
+    <node x="916.75" y="0.0">java.lang.constant.Constable</node>
+    <node x="758.0" y="613.0">Stored.Person</node>
+    <node x="2235.0" y="539.0">Commands.SaveCommand</node>
+    <node x="2784.0" y="539.0">Commands.InfoCommand</node>
+    <node x="776.75" y="0.0">java.lang.Comparable</node>
+    <node x="1402.0" y="400.0">Commands.Command</node>
+    <node x="1622.0" y="539.0">Commands.CountByTotalBoxOfficeCommand</node>
+    <node x="2382.0" y="539.0">Commands.ShowCommand</node>
+    <node x="0.0" y="539.0">Commands.ExecuteScriptCommand</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Commands.ExecuteScriptCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="95.5" y="449.0" />
+      <point x="1405.0625" y="449.0" />
+      <point x="-45.9375" y="14.5" />
+    </edge>
+    <edge source="Commands.FilterContainsNameCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="653.4999999999999" y="479.0" />
+      <point x="1423.4375" y="479.0" />
+      <point x="-27.5625" y="14.5" />
+    </edge>
+    <edge source="Commands.ClearCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="278.0" y="459.0" />
+      <point x="1411.1875" y="459.0" />
+      <point x="-39.8125" y="14.5" />
+    </edge>
+    <edge source="Commands.Command" target="Commands.CommandInterface">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="Commands.SaveCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="2298.5" y="479.0" />
+      <point x="1478.5625" y="479.0" />
+      <point x="27.5625" y="14.5" />
+    </edge>
+    <edge source="java.lang.Throwable" target="java.io.Serializable">
+      <point x="0.0" y="-14.5" />
+      <point x="-33.5" y="14.5" />
+    </edge>
+    <edge source="Commands.UpdateByIdCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="1062.0" y="499.0" />
+      <point x="1435.6875" y="499.0" />
+      <point x="-15.3125" y="14.5" />
+    </edge>
+    <edge source="Commands.ExitCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="1954.5" y="499.0" />
+      <point x="1466.3125" y="499.0" />
+      <point x="15.3125" y="14.5" />
+    </edge>
+    <edge source="Exceptions.ColorException" target="java.lang.Exception">
+      <point x="0.0" y="-14.5" />
+      <point x="751.0" y="227.0" />
+      <point x="665.5833333333334" y="227.0" />
+      <point x="9.333333333333371" y="14.5" />
+    </edge>
+    <edge source="java.lang.Exception" target="java.lang.Throwable">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.io.Serializable">
+      <point x="-25.33333333333337" y="-14.5" />
+      <point x="866.7499999999999" y="59.0" />
+      <point x="723.25" y="59.0" />
+      <point x="33.5" y="14.5" />
+    </edge>
+    <edge source="Enums.MovieGenre" target="java.lang.Enum">
+      <point x="0.0" y="-14.5" />
+      <point x="953.0833333333333" y="133.0" />
+      <point x="911.0833333333333" y="133.0" />
+      <point x="19.0" y="14.5" />
+    </edge>
+    <edge source="Commands.InfoCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="2847.5" y="449.0" />
+      <point x="1496.9375" y="449.0" />
+      <point x="45.9375" y="14.5" />
+    </edge>
+    <edge source="Commands.HistoryCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="1528.0" y="519.0" />
+      <point x="1454.0625" y="519.0" />
+      <point x="3.0625" y="14.5" />
+    </edge>
+    <edge source="Exceptions.LessThanZeroException" target="java.lang.Exception">
+      <point x="0.0" y="-14.5" />
+      <point x="99.5" y="207.0" />
+      <point x="609.5833333333334" y="207.0" />
+      <point x="-46.66666666666663" y="14.5" />
+    </edge>
+    <edge source="Exceptions.NotUniqueIdException" target="java.lang.Exception">
+      <point x="0.0" y="-14.5" />
+      <point x="561.5" y="227.0" />
+      <point x="646.9166666666666" y="227.0" />
+      <point x="-9.333333333333371" y="14.5" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.lang.constant.Constable">
+      <point x="25.33333333333337" y="-14.5" />
+      <point x="917.4166666666666" y="59.0" />
+      <point x="972.75" y="59.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="Commands.AddCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="1374.0" y="519.0" />
+      <point x="1447.9375" y="519.0" />
+      <point x="-3.0625" y="14.5" />
+    </edge>
+    <edge source="Exceptions.MovieGenreException" target="java.lang.Exception">
+      <point x="0.0" y="-14.5" />
+      <point x="1148.0" y="207.0" />
+      <point x="702.9166666666666" y="207.0" />
+      <point x="46.66666666666663" y="14.5" />
+    </edge>
+    <edge source="Commands.RemoveLowerCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="2126.5" y="489.0" />
+      <point x="1472.4375" y="489.0" />
+      <point x="21.4375" y="14.5" />
+    </edge>
+    <edge source="Commands.CountByTotalBoxOfficeCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="1746.5" y="509.0" />
+      <point x="1460.1875" y="509.0" />
+      <point x="9.1875" y="14.5" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.lang.Comparable">
+      <point x="0.0" y="-14.5" />
+      <point x="892.0833333333333" y="49.0" />
+      <point x="836.75" y="49.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="Enums.Color" target="java.lang.Enum">
+      <point x="0.0" y="-14.5" />
+      <point x="831.0833333333333" y="133.0" />
+      <point x="873.0833333333333" y="133.0" />
+      <point x="-19.0" y="14.5" />
+    </edge>
+    <edge source="Exceptions.CoordinateXException" target="java.lang.Exception">
+      <point x="0.0" y="-14.5" />
+      <point x="940.5" y="217.0" />
+      <point x="684.25" y="217.0" />
+      <point x="28.0" y="14.5" />
+    </edge>
+    <edge source="Commands.HelpCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="1230.5" y="509.0" />
+      <point x="1441.8125" y="509.0" />
+      <point x="-9.1875" y="14.5" />
+    </edge>
+    <edge source="Exceptions.ReadReservedCharException" target="java.lang.Exception">
+      <point x="0.0" y="-14.5" />
+      <point x="332.5" y="217.0" />
+      <point x="628.25" y="217.0" />
+      <point x="-28.0" y="14.5" />
+    </edge>
+    <edge source="Commands.AddIfMinCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="442.5" y="469.0" />
+      <point x="1417.3125" y="469.0" />
+      <point x="-33.6875" y="14.5" />
+    </edge>
+    <edge source="Commands.RemoveByIdCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="871.9999999999999" y="489.0" />
+      <point x="1429.5625" y="489.0" />
+      <point x="-21.4375" y="14.5" />
+    </edge>
+    <edge source="Commands.MaxByTotalBoxOfficeCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="2646.5" y="459.0" />
+      <point x="1490.8125" y="459.0" />
+      <point x="39.8125" y="14.5" />
+    </edge>
+    <edge source="Commands.ShowCommand" target="Commands.Command">
+      <point x="0.0" y="-14.5" />
+      <point x="2445.5" y="469.0" />
+      <point x="1484.6875" y="469.0" />
+      <point x="33.6875" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8" x="850.3333333333334" y="181.66666666666669" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
