@@ -1,5 +1,7 @@
 package Stored;
 
+import Monitoring.Control;
+
 public class Location {
     private Long x; //Поле не может быть null
     private int y;
@@ -11,23 +13,30 @@ public class Location {
         this.name = "UNKNOW";
     }
 
-    public Location(Long x, int y) {
+    @Override
+    public String toString() {
+        return (this.x + "," + this.y + "," + this.name);
+    }
+
+    public String toCSV() {
+        return (Control.objToCSV(this.x) +
+                Control.objToCSV(this.y) +
+                Control.objToCSV(this.name));
+    }
+
+    public void setX(Long x) {
         this.x = x;
+    }
+
+    public void setY(Integer y) {
         this.y = y;
-        this.name = "UNKNOW";
     }
 
-    public Location(Long x, int y, String name) {
-        this.x = x;
-        this.y = y;
-        this.name = name;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public Long getX() {
-        return x;
+    public void setName(String name) {
+        if (!name.equals("")) {
+            this.name = name;
+        } else {
+            this.name = "UNKNOW";
+        }
     }
 }

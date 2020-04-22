@@ -1,6 +1,8 @@
 package Stored;
 
 import Enums.MovieGenre;
+import Exceptions.LessThanZeroException;
+import Monitoring.Control;
 
 import java.time.ZonedDateTime;
 
@@ -20,19 +22,31 @@ public class Movie {
         return staticID++;
     }
 
+    public Movie() {
+        this.id = Movie.getID();
+        this.name = "UNKNOW";
+        this.coordinates = new Coordinates();
+        this.creationDate = ZonedDateTime.now();
+        this.oscarsCount = 0;
+        this.totalBoxOffice = 0;
+        this.usaBoxOffice = 0;
+        this.genre = MovieGenre.COMEDY;
+        this.operator = new Person();
+    }
+
     public Movie(
             String name,
             Coordinates coordinates,
             Integer oscarsCount,
-            int totalBoxOffice,
-            int usaBoxOffice,
+            Integer totalBoxOffice,
+            Integer usaBoxOffice,
             MovieGenre genre,
             Person operator
     ) {
         this.id = Movie.getID();
         this.name = name;
         this.coordinates = coordinates;
-        this. creationDate = ZonedDateTime.now();
+        this.creationDate = ZonedDateTime.now();
         this.oscarsCount = oscarsCount;
         this.totalBoxOffice = totalBoxOffice;
         this.usaBoxOffice = usaBoxOffice;
@@ -40,18 +54,46 @@ public class Movie {
         this.operator = operator;
     }
 
-    public String printInformation() {
-        System.out.print(this.id);
-        System.out.println(": '" + this.name + "' operator: " + this.operator.getName());
-        return("ok");
+
+
+    /**
+     * Переопределенный метод hashCode возвращает поле id
+     */
+    @Override
+    public int hashCode() {
+        return this.id;
     }
 
-    public Coordinates getCoordinates() {
-        return coordinates;
+    /**
+     * @return объект в строков представлении в формате CSV
+     */
+    public String toCSV() {
+        return Control.makeCSVLine(
+                Control.objToCSV(this.id) +
+                Control.objToCSV(this.name) +
+                this.coordinates.toCSV() +
+                Control.zoneDateTimeToCSV(this.creationDate) +
+                Control.objToCSV(this.oscarsCount) +
+                Control.objToCSV(this.totalBoxOffice) +
+                Control.objToCSV(this.usaBoxOffice) +
+                Control.objToCSV(this.genre) +
+                this.operator.toCSV()
+        );
     }
 
     public int getId() {
-        return id;
+        return this.id;
+    }
+
+    public static void setStaticID(int staticID) {
+        Movie.staticID = staticID;
+    }
+
+    /**
+     * @return уникальный id
+     */
+    public static int updateStaticID() {
+        return ++Movie.staticID;
     }
 
     public String getName() {
@@ -59,27 +101,11 @@ public class Movie {
     }
 
     public static int getStaticID() {
-        return staticID++;
+        return Movie.staticID;
     }
 
     public int getTotalBoxOffice() {
         return totalBoxOffice;
-    }
-
-    public Integer getOscarsCount() {
-        return oscarsCount;
-    }
-
-    public int getUsaBoxOffice() {
-        return usaBoxOffice;
-    }
-
-    public MovieGenre getGenre() {
-        return genre;
-    }
-
-    public Person getOperator() {
-        return operator;
     }
 
     public void setCoordinates(Coordinates coordinates) {
@@ -98,27 +124,57 @@ public class Movie {
         this.id = id;
     }
 
+    /**
+     * функция инициализирует поле name с учетом того что оно не может быть пустой строкой
+     * @param name обрабатываемое имя
+     */
     public void setName(String name) {
-        this.name = name;
+        if (!name.equals("")) {
+            this.name = name;
+        } else {
+            this.name = "UNKNOW";
+        }
     }
 
     public void setOperator(Person operator) {
         this.operator = operator;
     }
 
-    public void setOscarsCount(Integer oscarsCount) {
+
+    /**
+     * функция инициализирует поле oscarsCount с учетом того что оно должно быть положительным
+     * @param oscarsCount значение, которое мы хотим присвоить oscarCount
+     * @throws LessThanZeroException если значение не является положительным числом
+     */
+    public void setOscarsCount(Integer oscarsCount) throws LessThanZeroException {
+        if (oscarsCount <= 0) {
+            throw new LessThanZeroException();
+        }
         this.oscarsCount = oscarsCount;
     }
 
-    public void setTotalBoxOffice(int totalBoxOffice) {
+    /**
+     * функция инициализирует поле totalBoxOffice с учетом того что оно должно быть положительным
+     * @param totalBoxOffice значение, которое мы хотим присвоить totalBoxOffice
+     * @throws LessThanZeroException если значение не является положительным числом
+     */
+    public void setTotalBoxOffice(Integer totalBoxOffice) throws LessThanZeroException {
+        if (totalBoxOffice <= 0) {
+            throw new LessThanZeroException();
+        }
         this.totalBoxOffice = totalBoxOffice;
     }
 
-    public void setUsaBoxOffice(int usaBoxOffice) {
+    /**
+     * функция инициализирует поле usaBoxOffice с учетом того что оно должно быть положительным
+     * @param usaBoxOffice значение, которое мы хотим присвоить usaBoxOffice
+     * @throws LessThanZeroException если значение не является положительным числом
+     */
+    public void setUsaBoxOffice(Integer usaBoxOffice) throws LessThanZeroException{
+        if (usaBoxOffice <= 0) {
+            throw new LessThanZeroException();
+        }
         this.usaBoxOffice = usaBoxOffice;
     }
 
-    public ZonedDateTime getCreationDate() {
-        return creationDate;
-    }
 }
